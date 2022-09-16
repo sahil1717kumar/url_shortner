@@ -1,6 +1,6 @@
 const mongoose=require('mongoose')
 
-const uri = "mongodb+srv://app:glitchinthematrix@cluster0.6kr1www.mongodb.net/?retryWrites=true&w=majority"
+const uri = process.env.DB
 
 module.exports = ()=>{
     return mongoose.connect(uri)

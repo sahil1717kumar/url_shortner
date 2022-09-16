@@ -1,4 +1,6 @@
 const express = require('express')
+const dotenv = require('dotenv')
+dotenv.config()
 const port =3000
 const app = express()
 const initConnection = require("./database/init")
