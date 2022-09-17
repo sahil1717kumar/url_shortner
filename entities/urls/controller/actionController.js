@@ -25,11 +25,16 @@ module.exports.postReq = async (req, res) => {
 
 module.exports.getReq = async (req, res) => {
     let url = req.params.url
-    if (!url)
+    if (!url){
         res.redirect("/")
+        return
+    }
     try {
         let URL = await queryOneURL({ shortUrl: url })
-        res.redirect(URL.originalUrl)
+        console.log(URL)
+        if(URL)
+            res.redirect(URL.originalUrl)
+        res.end()
     }
     catch (err) {
         console.log(err)

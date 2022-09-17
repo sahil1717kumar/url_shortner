@@ -30,6 +30,7 @@
                     <th class="column3">Action</th>
                 </thead>
                 <tbody>
+                    <% allUrls.reverse() %>
                     <% allUrls.forEach((elem,index)=>{ %>
                         <tr id="<%= index %>">
                             <td class="orgURL column1"><%= elem.originalUrl %></td>
